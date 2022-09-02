@@ -12,7 +12,7 @@ const (
 )
 
 type Ip struct {
-	Address   string
+	Address   string `json:"ip"`
 	Swarm     bool
 	Gateway   bool
 	Signature string
