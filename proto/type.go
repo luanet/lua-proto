@@ -11,6 +11,13 @@ const (
 	HeartBeatService Service = iota
 )
 
+type Ip struct {
+	Address   string
+	Swarm     bool
+	Gateway   bool
+	Signature string
+}
+
 type HeartBeatReq struct {
 	Stats metrics.Stats
 }
@@ -21,6 +28,8 @@ type HeartBeatRes struct {
 
 type JoinReq struct {
 	Address   string `json:"address"`
+	Ipv4      Ip     `json:"ipv4"`
+	Ipv6      Ip     `json:"ipv6"`
 	Signature []byte `json:"signature"`
 	Expires   int64  `json:"expires"`
 }
