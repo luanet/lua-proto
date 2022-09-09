@@ -15,10 +15,11 @@ type Ip struct {
 }
 
 type Stats struct {
-	Storage  int64
-	TotalOut int64
-	Ingress  float64
-	Egress   float64
+	Storage int64   // total disk space usage
+	In      int64   // total bytes in since last sync
+	Out     int64   // total bytes out since last sync
+	Ingress float64 // ingress bytes/second
+	Egress  float64 // egress bytes/second
 }
 
 type HeartBeatReq struct {
