@@ -15,10 +15,10 @@ type Ip struct {
 }
 
 type Stats struct {
-	TotalIn  int64
+	Storage  int64
 	TotalOut int64
-	RateIn   float64
-	RateOut  float64
+	Ingress  float64
+	Egress   float64
 }
 
 type HeartBeatReq struct {
