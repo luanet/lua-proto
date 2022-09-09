@@ -1,9 +1,5 @@
 package proto
 
-import (
-	metrics "github.com/libp2p/go-libp2p-core/metrics"
-)
-
 type Service int64
 
 const (
@@ -18,8 +14,15 @@ type Ip struct {
 	Signature string
 }
 
+type Stats struct {
+	TotalIn  int64
+	TotalOut int64
+	RateIn   float64
+	RateOut  float64
+}
+
 type HeartBeatReq struct {
-	Stats metrics.Stats
+	Stats Stats
 }
 
 type HeartBeatRes struct {
