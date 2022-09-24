@@ -56,7 +56,7 @@ type JoinReq struct {
 type JoinRes struct {
 	Success bool   `json:"success"`
 	Message string `json:message`
-	Data    map[string]Certificate
+	Certs   map[string]Certificate
 }
 
 type Proto struct {
