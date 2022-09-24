@@ -3,6 +3,7 @@ package proto
 import (
 	"database/sql/driver"
 	"encoding/json"
+	"errors"
 )
 
 type Service int64
