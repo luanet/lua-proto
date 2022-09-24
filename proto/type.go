@@ -41,6 +41,22 @@ type JoinReq struct {
 type JoinRes struct {
 	Success bool   `json:"success"`
 	Message string `json:message`
+	Data    map[string]struct {
+		Site struct {
+			Subject  string   `json:"subject"`
+			Altnames []string `json:"altnames"`
+			RenewAt  int      `json:"renewAt"`
+		} `json:"site"`
+		Pems struct {
+			Cert      string   `json:"cert"`
+			Chain     string   `json:"chain"`
+			Privkey   string   `json:"privkey"`
+			Subject   string   `json:"subject"`
+			Altnames  []string `json:"altnames"`
+			IssuedAt  int64    `json:"issuedAt"`
+			ExpiresAt int64    `json:"expiresAt"`
+		} `json:"pems"`
+	} `json:"data"`
 }
 
 type Proto struct {
