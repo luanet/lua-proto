@@ -1,5 +1,10 @@
 package proto
 
+import (
+	"database/sql/driver"
+	"encoding/json"
+)
+
 type Service int64
 
 const (
