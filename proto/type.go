@@ -13,7 +13,24 @@ const (
 	HeartBeatService Service = iota
 )
 
-type Certificate map[string]interface{}
+type Cert struct {
+	Site struct {
+		Subject  string   `json:"subject"`
+		Altnames []string `json:"altnames"`
+		RenewAt  int      `json:"renewAt"`
+	} `json:"site"`
+	Pems struct {
+		Cert      string   `json:"cert"`
+		Chain     string   `json:"chain"`
+		Privkey   string   `json:"privkey"`
+		Subject   string   `json:"subject"`
+		Altnames  []string `json:"altnames"`
+		IssuedAt  int64    `json:"issuedAt"`
+		ExpiresAt int64    `json:"expiresAt"`
+	} `json:"pems"`
+}
+
+type Certificate map[string]Cert
 
 func (a Certificate) Value() (driver.Value, error) {
 	return json.Marshal(a)
