@@ -13,7 +13,7 @@ const (
 	HeartBeatService Service = iota
 )
 
-type Cert struct {
+type Certificate struct {
 	Site struct {
 		Subject  string   `json:"subject"`
 		Altnames []string `json:"altnames"`
@@ -29,8 +29,6 @@ type Cert struct {
 		ExpiresAt int64    `json:"expiresAt"`
 	} `json:"pems"`
 }
-
-type Certificate map[string]Cert
 
 func (a Certificate) Value() (driver.Value, error) {
 	return json.Marshal(a)
