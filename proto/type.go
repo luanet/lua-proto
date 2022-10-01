@@ -11,6 +11,7 @@ type Service int64
 const (
 	JoinService      Service = iota
 	HeartBeatService Service = iota
+	SpeedTestService Service = iota
 )
 
 type Certificate struct {
