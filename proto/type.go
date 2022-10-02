@@ -59,8 +59,8 @@ type IpTest struct {
 
 type TestResult struct {
 	Ports    map[string]IpTest
-	Download uint64
-	Upload   uint64
+	Download float64
+	Upload   float64
 }
 
 type Stats struct {
