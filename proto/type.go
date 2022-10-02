@@ -51,6 +51,18 @@ type Ip struct {
 	Signature string
 }
 
+type IpTest struct {
+	Ip      string `json:"ip"`
+	Swarm   bool   `json:"swarm"`
+	Gateway bool   `json:"gateway"`
+}
+
+type TestResult struct {
+	Ports    map[string]IpTest
+	Download uint64
+	Upload   uint64
+}
+
 type Stats struct {
 	Storage int64   // total disk space usage
 	In      int64   // total bytes in since last sync
