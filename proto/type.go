@@ -88,9 +88,10 @@ type JoinReq struct {
 }
 
 type JoinRes struct {
-	Success bool   `json:"success"`
-	Message string `json:message`
-	Certs   map[string]Certificate
+	Success      bool   `json:"success"`
+	Message      string `json:"message"`
+	Unconfigured bool   `json:"unconfigured"`
+	Certs        map[string]Certificate
 }
 
 type Proto struct {
