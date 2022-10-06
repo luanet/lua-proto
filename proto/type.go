@@ -57,6 +57,10 @@ type IpTest struct {
 	Gateway bool   `json:"gateway"`
 }
 
+func (i *IpTest) isOpen() bool {
+	return i.Swarm && i.Gateway
+}
+
 type TestResult struct {
 	Ports    map[string]IpTest
 	Download float64
