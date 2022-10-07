@@ -57,7 +57,7 @@ type IpTest struct {
 	Gateway bool   `json:"gateway"`
 }
 
-func (i *IpTest) isOpen() bool {
+func (i *IpTest) IsOpen() bool {
 	return i.Swarm && i.Gateway
 }
 
