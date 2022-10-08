@@ -52,9 +52,10 @@ type Ip struct {
 }
 
 type IpTest struct {
-	Ip      string `json:"ip"`
-	Swarm   bool   `json:"swarm"`
-	Gateway bool   `json:"gateway"`
+	Ip        string `json:"ip"`
+	Swarm     bool   `json:"swarm"`
+	Gateway   bool   `json:"gateway"`
+	Signature string `json::"signature"`
 }
 
 func (i *IpTest) IsOpen() bool {
@@ -62,7 +63,8 @@ func (i *IpTest) IsOpen() bool {
 }
 
 type TestResult struct {
-	Ports    map[string]IpTest
+	V4       IpTest
+	V6       IpTest
 	Download float64
 	Upload   float64
 }
